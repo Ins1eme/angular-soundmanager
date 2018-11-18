@@ -1,1 +1,1 @@
-# angular-soundmanager
+# Angular soundmanager
