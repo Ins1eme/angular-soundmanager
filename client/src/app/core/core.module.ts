@@ -4,6 +4,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { MaterialModule } from "../material.module";
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { PlayerComponent } from './components/player/player.component';
+import { RouterModule } from "@angular/router";
 
 @NgModule({
     declarations: [
@@ -13,7 +14,8 @@ import { PlayerComponent } from './components/player/player.component';
     ],
     imports: [
         MaterialModule,
-        CommonModule
+        CommonModule,
+        RouterModule
     ],
     exports: [
         MaterialModule,
