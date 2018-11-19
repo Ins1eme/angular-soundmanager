@@ -1,0 +1,104 @@
+@import "../../../../styles-variables"
+
+.player
+    position: fixed
+    display: flex
+    align-items: center
+    width: 100%
+    z-index: 1
+    bottom: 0
+    padding: 20px 
+    box-shadow: 0 4px 20px 10px rgba(0,0,0,.1)
+    background: $grayColor
+    transition: .3s ease-in-out
+
+    &.dark_mode
+        background: $lightDarkColor
+
+.controls-middle
+    display: flex
+    align-items: center
+    margin-left: auto
+    margin-right: -120px
+
+.controls-right
+    display: flex
+    align-items: center
+    margin-left: auto
+
+mat-icon
+    width: 20px
+    height: 20px
+
+.play-button,
+.stop-button
+    width: 40px
+    height: 40px
+    background: $pinkColor
+    border-radius: 50%
+    margin-right: 20px
+    display: flex
+    align-items: center
+    justify-content: center
+    cursor: pointer
+    padding: 8px
+
+    mat-icon
+        fill: $whiteColor
+    
+    &.dark_mode
+        background: $greenColor
+        
+        mat-icon
+            fill: $whiteColor
+        
+.stop-button
+    mat-icon
+        margin-left: -1px
+.play-button
+
+    mat-icon
+        margin-left: 3px
+
+.previous-button,
+.next-button
+    display: flex
+    align-items: center
+    cursor: pointer
+    transition: .3s ease-in-out
+
+    mat-icon
+        fill: $blueColor
+    
+    &.dark_mode
+
+        mat-icon
+            fill: $whiteColor
+
+.previous-button
+    margin-right: 20px
+    transform: rotate(180deg)
+
+.volume-button
+    display: flex
+    align-items: center
+    transition: .3s ease-in-out
+
+    mat-icon
+        fill: $blueColor
+        margin-right: 10px
+    
+    &.dark_mode
+        mat-icon
+            fill: $whiteColor
+
+::ng-deep mat-slider.volume-slider 
+    transition: .3s ease-in-out
+    .mat-slider-thumb, 
+    .mat-slider-track-fill
+        background-color: $pinkColor
+    &.dark_mode
+        .mat-slider-thumb,
+        .mat-slider-track-fill
+            background-color: $greenColor
+        

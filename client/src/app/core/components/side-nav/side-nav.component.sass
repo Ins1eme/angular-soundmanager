@@ -1,0 +1,45 @@
+@import "../../../../styles-variables"
+
+.sidenav
+    box-shadow: 10px 0 40px -4px rgba(0,0,0,.3)
+    transition: .3s ease-in-out
+    background: $grayColor
+    position: fixed
+    left: 0
+    z-index: 2
+    height: 100%   
+    &.dark_mode
+        background-color: $darkColor
+
+mat-icon
+    transition: .3s ease-in-out
+    fill: $blueColor
+    width: 22px
+
+.sidenav-list.dark_mode
+    mat-icon
+        fill: $whiteColor
+
+    li.active
+        border-right: 3px solid $greenColor
+
+        mat-icon
+            fill: $greenColor
+            
+.sidenav-list
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 32px 0px
+
+    li
+        padding: 15px 23px
+        position: relative
+        cursor: pointer
+        transition: .3s ease-in-out
+
+        &.active
+            border-right: 3px solid $pinkColor
+
+            mat-icon
+                fill: $pinkColor

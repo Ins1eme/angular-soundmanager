@@ -1,0 +1,19 @@
+<header [ngClass]="{'dark_mode': styleMode}">
+	<div class="container">
+		<div class="logo">
+			<mat-icon  svgIcon="logo" [ngClass]="{'dark_mode': styleMode}"></mat-icon>
+			<span class="logo-name">Zondimo</span>
+		</div>
+
+		<div class="change-mode">
+			<mat-slide-toggle (change) = "onChangeMode($event)"> </mat-slide-toggle>
+		</div>
+
+		<div class="auth">
+			<mat-icon svgIcon="profile" [ngClass]="{'dark_mode': styleMode}" class="user-icon" ></mat-icon>
+			<span class="auth-text" [ngClass]="{'dark_mode': styleMode}">
+				Login
+			</span>
+		</div>
+	</div>
+</header>

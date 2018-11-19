@@ -1,0 +1,59 @@
+@import "../../../../styles-variables"
+
+header
+	z-index: 3
+	position: fixed
+	top: 0
+	left: 0
+	right: 0
+	padding: 16px 0px
+	height: 64px
+	box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.1)
+	background: $grayColor
+	transition: .3s ease-in-out
+	&.dark_mode
+		background: $darkColor
+		color: $whiteColor
+
+	.container
+		display: flex
+		align-items: center
+.logo
+	display: flex
+	align-items: center
+	&-name
+		text-transform: uppercase
+		font-size: 14px
+		font-weight: 500
+		line-height: 32px
+.change-mode
+	margin-left: auto
+	margin-right: 25px
+.auth
+	display: flex
+	align-items: center
+	padding: 5px 16px
+	cursor: pointer
+	
+	&-text
+		text-transform: uppercase
+		font-size: 11px
+		font-weight: 500
+		letter-spacing: 1px
+		color: $pinkColor
+		transition: .3s ease-in-out
+
+		&.dark_mode 
+			color: $greenColor
+
+mat-icon
+	transition: .3s ease-in-out
+	fill: $pinkColor
+	width: 24px
+	margin-right: 10px
+	&.dark_mode 
+		fill: $greenColor
+
+	&.user-icon
+		&.dark_mode
+			fill: $whiteColor
