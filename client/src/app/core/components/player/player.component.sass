@@ -10,7 +10,7 @@
     padding: 20px 
     box-shadow: 0 4px 20px 10px rgba(0,0,0,.1)
     background: $grayColor
-    transition: .3s ease-in-out
+    transition: $transition
 
     &.dark_mode
         background: $lightDarkColor
@@ -42,6 +42,7 @@ mat-icon
     justify-content: center
     cursor: pointer
     padding: 8px
+    transition: $transition
 
     mat-icon
         fill: $whiteColor
@@ -65,9 +66,9 @@ mat-icon
     display: flex
     align-items: center
     cursor: pointer
-    transition: .3s ease-in-out
 
     mat-icon
+        transition: $transition
         fill: $blueColor
     
     &.dark_mode
@@ -82,9 +83,9 @@ mat-icon
 .volume-button
     display: flex
     align-items: center
-    transition: .3s ease-in-out
 
     mat-icon
+        transition: $transition
         fill: $blueColor
         margin-right: 10px
     
@@ -92,10 +93,10 @@ mat-icon
         mat-icon
             fill: $whiteColor
 
-::ng-deep mat-slider.volume-slider 
-    transition: .3s ease-in-out
+::ng-deep mat-slider.volume-slider
     .mat-slider-thumb, 
     .mat-slider-track-fill
+        transition: $transition
         background-color: $pinkColor
     &.dark_mode
         .mat-slider-thumb,

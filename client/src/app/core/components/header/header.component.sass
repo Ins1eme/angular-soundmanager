@@ -10,7 +10,7 @@ header
 	height: 64px
 	box-shadow: 0 5px 15px -2px rgba(0, 0, 0, 0.1)
 	background: $grayColor
-	transition: .3s ease-in-out
+	transition: $transition
 	&.dark_mode
 		background: $darkColor
 		color: $whiteColor
@@ -41,13 +41,13 @@ header
 		font-weight: 500
 		letter-spacing: 1px
 		color: $pinkColor
-		transition: .3s ease-in-out
+		transition: $transition
 
 		&.dark_mode 
 			color: $greenColor
 
 mat-icon
-	transition: .3s ease-in-out
+	transition: $transition
 	fill: $pinkColor
 	width: 24px
 	margin-right: 10px
