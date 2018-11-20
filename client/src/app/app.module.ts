@@ -20,7 +20,7 @@ import { AppRoutingModule } from './app-routing.module';
     CoreModule,
     SharedModule,
     PagesModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

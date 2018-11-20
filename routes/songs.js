@@ -6,6 +6,9 @@ const Album = require('../models/Album')
 
 router.get('/music/albums', controller.getAlboms);
 
+router.get('/music/authors', controller.getAuthors);
+router.get('/music/author', controller.getAuthor);
+
 router.post('/music/albums', controller.addAlbom);
 
 

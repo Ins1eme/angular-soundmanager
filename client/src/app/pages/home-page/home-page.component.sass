@@ -1,0 +1,78 @@
+@import "../../../styles-variables"
+    
+main
+    background-color: #fafafa
+    padding: 32px 32px 88px 32px
+    transition: $transition
+    margin-right: -2%
+    &.dark_mode
+        background-color: $lightDarkColor
+
+.author-container  
+    display: flex 
+    width: 100%
+    flex-flow: row
+    flex-wrap: wrap
+    margin-right: -2%
+
+.author
+    background: $whiteColor
+    box-shadow: 0 4px 20px -2px rgba(0,0,0,.1)
+    margin-right: 2%
+    min-width: 300px
+    flex-grow: 1
+    margin-bottom: 2%
+    flex-basis: 30%
+    transition: $transition
+
+    &.dark_mode
+        background: $darkGrayColor
+    .author-img
+        margin-bottom: 16px
+        img
+            display: block
+            width: 100%
+.author-content
+    padding: 0 24px 24px 24px
+
+.author-name
+    margin-bottom: 20px
+
+    .author-link
+        transition: $transition
+        font-size: 18px
+        font-weight: 600
+
+        &.dark_mode
+            color: $whiteColor
+
+.genres
+    margin-bottom: 15px
+    mat-chip
+        font-size: 13px
+        font-weight: 400
+
+::ng-deep mat-chip-list.chip-list 
+    mat-chip
+        transition: $transition
+        cursor: pointer
+    &.dark_mode
+        mat-chip
+            background: $lightGrayColor
+            color: $whiteColor
+
+.author-button
+    font-family: inherit
+    font-size: 11px
+    text-transform: uppercase
+    background-color: $pinkColor
+    border: none
+    color: $whiteColor
+    font-weight: 500
+    border-radius: 2px
+    transition:  $transition
+
+    &.dark_mode
+        background-color: $greenColor
+        color: $fontColor
+    

@@ -13,89 +13,120 @@ module.exports.getAlboms = async function (req, res) {
     res.status(200).json(author)
 }
 
+module.exports.getAuthors = async function (req, res) {
+    const authors = await Author.find()
+    res.status(200).json(authors)
+}
 
-
-
+module.exports.getAuthor = async function(req, res) {
+    const author = await Author.findOne({name: req.params.name}).populate({
+        path: 'albums',
+        populate: {
+            path: 'playlists'
+        }
+    })
+    res.status(200).json(author)
+}
 module.exports.addAlbom = async function (req, res) {
     
     const song1 = new Song({
-        songName: 'Broken Smile',
-        songAuthor: 'Lil Peep',
-        url: 'https://drive.google.com/uc?export=download&id=1veowYto8f-PxYomIOsz1230QzO-V7kRS',
+        songName: "All These Things That I've Done",
+        songAuthor: 'The Killers',
+        url: 'https://drive.google.com/uc?export=download&id=1BAIQ0RomDq4t_mDJTc8YZDkqY7m-AInw',
     })
 
     const song2 = new Song({
-        songName: 'Runaway',
-        songAuthor: 'Lil Peep',
-        url: 'https://drive.google.com/uc?export=download&id=1Nk1sKCLOGraj-WlIJtFR12YigiPYkDdV',
+        songName: "Andy, You're a Star",
+        songAuthor: 'The Killers',
+        url: 'https://drive.google.com/uc?export=download&id=1zhBpuSvt8Mb2EPbLYUtvnHmjHPOPCvwJ',
     })
 
     const song3 = new Song({
-        songName: 'Sex With My Ex',
-        songAuthor: 'Lil Peep',
-        url: 'https://drive.google.com/uc?export=download&id=1WWun6-HWRCVQ44H4PYxOySVeG1zAtcw2',
+        songName: 'Believe Me Natalie',
+        songAuthor: 'The Killers',
+        url: 'https://drive.google.com/uc?export=download&id=1N3x3h8WxxD1-X71uh6REEdoRlMKZPuzi',
     })
 
     const song4 = new Song({
-        songName: 'Cry Alone',
-        songAuthor: 'Lil Peep',
-        url: 'https://drive.google.com/uc?export=download&id=1VRkAgZxgA_5znmmxCrrmsqk6UA6MkmRA',
+        songName: 'Change Your Mind',
+        songAuthor: 'The Killers',
+        url: 'https://drive.google.com/uc?export=download&id=1meSWVh3fDXAWNxcdhMw0x6eWkXJ7sMLv',
     })
 
     const song5 = new Song({
-        songName: 'Leanin`',
-        songAuthor: 'Lil Peep',
-        url: 'https://drive.google.com/uc?export=download&id=1-YACdqwqDeOB0-02Xr24Kk_84khohAiU',
+        songName: 'Everything Will Be Alright',
+        songAuthor: 'The Killers',
+        url: 'https://drive.google.com/uc?export=download&id=1GRO5QwomYibSTTZ5bbpCx6fK1ZMcVW4l',
     })
 
     const song6 = new Song({
-        songName: '16 Lines',
-        songAuthor: 'Lil Peep',
-        url: 'https://drive.google.com/uc?export=download&id=1G4P51DFK0ByrgLfEjq0VFd7_Hnjm8E9b',
+        songName: 'Glamorous Indie Rock & Roll',
+        songAuthor: 'The Killers',
+        url: 'https://drive.google.com/uc?export=download&id=1P-xkuhyySWh2rd6Y6crExOfB3jxK336_',
     })
 
     const song7 = new Song({
-        songName: 'Life is Beautiful',
-        songAuthor: 'Lil Peep',
-        url: 'https://drive.google.com/uc?export=download&id=1aYfpfULb_Hih4fs7hT9_KIyrpm_WM-ZQ',
+        songName: 'Jenny Was a Friend of Mine',
+        songAuthor: 'The Killers',
+        url: 'https://drive.google.com/uc?export=download&id=16ZDhjHnG1Vfw3sgJ2G7Aa0trsVeEEycq',
     })
 
     const song8 = new Song({
-        songName: 'Hate Me',
-        songAuthor: 'Lil Peep',
-        url: 'https://drive.google.com/uc?export=download&id=1JaWCZG9DFHbePE2XYhvEKMKfcjDKj_hL',
+        songName: 'Midnight Show',
+        songAuthor: 'The Killers',
+        url: 'https://drive.google.com/uc?export=download&id=1aP5TUc09MvEm0tsAW4Cpqxt1PVqH9plA',
     })
 
     const song9 = new Song({
-        songName: 'Fingers',
-        songAuthor: 'Lil Peep',
-        url: 'https://drive.google.com/uc?export=download&id=1mjDSxh3536gmq6mzoAJQcP2A80gJw1GA',
+        songName: 'Mr. Brightside',
+        songAuthor: 'The Killers',
+        url: 'https://drive.google.com/uc?export=download&id=1OV1ej5gkHZKyvpnJdPvLS2GZKBZZaB50',
     })
 
     const song10 = new Song({
-        songName: 'IDGAF',
-        songAuthor: 'Lil Peep',
-        url: 'https://drive.google.com/uc?export=download&id=1-t134s47wnjjJ0dSse3PqG9XHAjUExxS',
+        songName: 'On Top',
+        songAuthor: 'The Killers',
+        url: 'https://drive.google.com/uc?export=download&id=16zx171vTI-oGh1Pc5rZfULgMxlqMxcLf',
     })
 
     const song11 = new Song({
-        songName: 'White Girl',
-        songAuthor: 'Lil Peep',
-        url: 'https://drive.google.com/uc?export=download&id=12pKTixSgnc5NPZF7MZRxztluozHwyVNS',
+        songName: 'Smile Like You Mean It',
+        songAuthor: 'The Killers',
+        url: 'https://drive.google.com/uc?export=download&id=1s3wmg1gdBzqqWfwMh9C_pfWNi-dU5izk',
+    })
+    const song12 = new Song({
+        songName: 'Somebody Told Me',
+        songAuthor: 'The Killers',
+        url: 'https://drive.google.com/uc?export=download&id=1rPzgGgN4USMSm5lWm4YaDhcO_DkrBJKN',
+    })
+    const song13 = new Song({
+        songName: 'Smile Like You Mean It',
+        songAuthor: 'The Killers',
+        url: 'https://drive.google.com/uc?export=download&id=1s3wmg1gdBzqqWfwMh9C_pfWNi-dU5izk',
+    })
+    const song14 = new Song({
+        songName: 'The Ballad of Michael Valentine',
+        songAuthor: 'The Killers',
+        url: 'https://drive.google.com/uc?export=download&id=1S_1uO_dMcCagUTQHrkOlpyr1ZUjYBfyZ',
+    })
+    const song15 = new Song({
+        songName: 'Under the Gun',
+        songAuthor: 'The Killers',
+        url: 'https://drive.google.com/uc?export=download&id=1qjWOv5Vbsz08pK3w8J-A546z8ZjAVElW',
     })
 
     const album = new Album({
-        albumName: 'Come Over When You`re Sober, Pt. 2',
-        albumAuthor: 'Lil Peep',
-        backgroundImage: 'https://drive.google.com/uc?export=download&id=1x0tPkxuuPgrZU3U5RcSUAQsFtkf1TAkh',
-        genre: ['Rap', 'Hip-hop'],
-        playlists: [song1, song2, song3, song4, song5, song6, song7, song8, song9, song10, song11]
+        albumName: 'Hot Fuss',
+        albumAuthor: 'The Killers',
+        backgroundImage: 'assets/the_killers/hot_fuss.jpg',
+        playlists: [song1, song2, song3, song4, song5, song6, song7, song8, song9, song10, song11, song12, song13, song14, song15]
     })
 
     const author = new Author({
-        authorName: 'Lil Peep',
+        authorName: 'The Killers',
         albums: [album],
-        genre: ['Rap', 'Hip-hop']
+        genre: ['Alternative rock', 'Indie rock'],
+        authorImage: 'assets/the_killers/the_killers.jpg'
     })
 
     await author.save()
@@ -111,5 +142,9 @@ module.exports.addAlbom = async function (req, res) {
     await song9.save()
     await song10.save()
     await song11.save()
+    await song12.save()
+    await song13.save()
+    await song14.save()
+    await song15.save()
 }
 

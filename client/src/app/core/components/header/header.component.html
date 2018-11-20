@@ -1,8 +1,8 @@
 <header [ngClass]="{'dark_mode': styleMode}">
 	<div class="container">
-		<div class="logo">
+		<div class="logo" [routerLink]="['authors']">
 			<mat-icon  svgIcon="logo" [ngClass]="{'dark_mode': styleMode}"></mat-icon>
-			<span class="logo-name">Zondimo</span>
+			<span class="logo-name">Sound Manager</span>
 		</div>
 
 		<div class="change-mode">

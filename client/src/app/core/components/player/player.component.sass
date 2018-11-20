@@ -94,12 +94,15 @@ mat-icon
             fill: $whiteColor
 
 ::ng-deep mat-slider.volume-slider
+    .mat-slider-thumb,
     .mat-slider-thumb, 
     .mat-slider-track-fill
-        transition: $transition
+        transition: background-color $transition
         background-color: $pinkColor
     &.dark_mode
         .mat-slider-thumb,
         .mat-slider-track-fill
             background-color: $greenColor
         
+::ng-deep .mat-slider-thumb
+    transform: scale(.7)!important

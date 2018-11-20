@@ -4,6 +4,8 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatChipsModule } from '@angular/material/chips';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
     imports: [
@@ -11,14 +13,18 @@ import { MatToolbarModule } from '@angular/material/toolbar';
         MatSlideToggleModule,
         MatSidenavModule,
         MatSliderModule,
-        MatToolbarModule
+        MatToolbarModule,
+        MatChipsModule,
+        MatButtonModule
     ],
     exports: [
         MatIconModule,
         MatSlideToggleModule,
         MatSidenavModule,
         MatSliderModule,
-        MatToolbarModule
+        MatToolbarModule,
+        MatChipsModule,
+        MatButtonModule
     ]
 })
 
