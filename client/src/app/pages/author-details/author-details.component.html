@@ -1,0 +1,50 @@
+<main *ngIf="author">
+	<div class="author-banner">
+		<div class="author-banner-content">
+			<h1 class="author-name">{{author.authorName}}</h1>
+			<p class="author-description">Great music inspired by early electronic sounds, combining the symphony of classical instruments and complete surrounding</p>
+			<a class="play-song" mat-button>
+				<mat-icon svgIcon= "play-circular"></mat-icon>
+				<span class="play-song-text">Play songs</span>
+			</a>
+		</div>
+		<img [src]="author.authorImage" >
+	</div>
+	
+	<div class="author-content">
+		<div class="author-albums">
+			<div class="author-albums-title">
+				<mat-icon svgIcon="cd"></mat-icon>
+				<h3>{{author.authorName}} Albums</h3>
+			</div>
+
+			<div class="album" *ngFor = "let album of author.albums">
+				<div class="album-top">
+					<img [src]="album.backgroundImage">
+
+					<div class="album-info">
+						<span class="album-name">{{album.albumName}}</span>
+						<div class="album-share">
+							<mat-icon svgIcon="share"></mat-icon>
+							<mat-icon svgIcon="refresh-dot"></mat-icon>
+							<mat-icon svgIcon="heart"></mat-icon>
+						</div>
+					</div>
+
+					<div class="play-button"  [ngClass]="{'dark_mode': styleMode}">
+						<mat-icon svgIcon="play"></mat-icon>
+					</div>
+				</div>
+				<div class="song-list" *ngFor = "let song of album.playlists">
+					<div class="song-item" (click) = "setCurrentSong(song)">
+						<div class="play-song">
+							<mat-icon svgIcon= "play-circular"></mat-icon>
+						</div>
+						<span class="current-song">{{song.songAuthor}} - {{song.songName}}</span>
+						<mat-icon svgIcon="show-more" class="show-more-button"></mat-icon>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</main>

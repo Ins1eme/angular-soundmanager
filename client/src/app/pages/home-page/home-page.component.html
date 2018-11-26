@@ -1,28 +1,27 @@
 <main [ngClass]="{'dark_mode': styleMode}">
 	<div class="author-container">
-			<div class="author" [ngClass]="{'dark_mode': styleMode}" *ngFor="let author of authors$ | async">
-				<div class="author-img">
-					<img [src]="author.authorImage">
-				</div>
-				<div class="author-content">
-					<div  class="author-name">
-						<a routerLink="" class="author-link" [ngClass]="{'dark_mode': styleMode}">{{author.authorName}}</a>
-					</div>
-					<div class="genres">
-						<mat-chip-list class="chip-list" [ngClass]="{'dark_mode': styleMode}">
-							<mat-chip *ngFor="let genre of author.genre">{{genre}}</mat-chip>
-						</mat-chip-list>
-					</div>
-					<button 
-						mat-button 
-						[ngClass]="{'dark_mode': styleMode}" 
-						[routerLink]="[ '/authors', author.authorName]"
-						class="author-button" 
-					>
-						See author
-					</button>
-				</div>
+		<div class="author" [ngClass]="{'dark_mode': styleMode}" *ngFor="let author of authors$ | async">
+			<div class="author-img">
+				<img [src]="author.authorImage">
 			</div>
+			<div class="author-content">
+				<div  class="author-name">
+					<a routerLink="" class="author-link" [ngClass]="{'dark_mode': styleMode}">{{author.authorName}}</a>
+				</div>
+				<div class="genres">
+					<mat-chip-list class="chip-list" [ngClass]="{'dark_mode': styleMode}">
+						<mat-chip *ngFor="let genre of author.genre">{{genre}}</mat-chip>
+					</mat-chip-list>
+				</div>
+				<button 
+					mat-button 
+					[ngClass]="{'dark_mode': styleMode}" 
+					[routerLink]="[ '/authors', author.authorName]"
+					class="author-button" 
+				>
+					See author
+				</button>
+			</div>
+		</div>
 	</div>
-	
 </main>

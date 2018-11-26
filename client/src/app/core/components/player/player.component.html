@@ -1,23 +1,41 @@
 <div class="player" [ngClass]="{'dark_mode': styleMode}">
-	<div class="controls-middle">
-		<div class="previous-button" [ngClass]="{'dark_mode': styleMode}">
-			<mat-icon svgIcon="next"></mat-icon>
-		</div>
-		<div class="play-button" (click) = "playSong()"  *ngIf="!playerState" [ngClass]="{'dark_mode': styleMode}">
-			<mat-icon svgIcon="play" ></mat-icon>
-		</div>
-		<div class="stop-button" (click) = "pauseSong()" *ngIf="playerState" [ngClass]="{'dark_mode': styleMode}">
-			<mat-icon svgIcon="pause"></mat-icon>
-		</div>
-		<div class="next-button" [ngClass]="{'dark_mode': styleMode}">
-			<mat-icon svgIcon="next"></mat-icon>
+	<div class="current-song-wrapper">
+		<div  class="controls-left" *ngIf="currentSong">
+			<span class="current-song-author">
+				{{currentSong.songAuthor}} - {{currentSong.songName}}
+			</span>
+			<mat-slider 
+				class="current-song-duration" 
+				min = "0"  
+				max = "100" 
+				step="0.01" 
+				[value] = "currentTime"
+				(input) = "onTimeChange($event)"
+			>
+	
+			</mat-slider>
 		</div>
 	</div>
 
+	<div class="controls-middle">
+		<div class="previous-button" [ngClass]="{'dark_mode': styleMode}" (click) = "previousSong()">
+			<mat-icon svgIcon="next"></mat-icon>
+		</div>
+		<div class="play-button"  (click) = "playSong()"  *ngIf="!playerState" [ngClass]="{'dark_mode': styleMode}">
+			<mat-icon svgIcon="play" ></mat-icon>
+		</div>
+		<div class="stop-button" (click) = "pauseSong()"   *ngIf="playerState" [ngClass]="{'dark_mode': styleMode}">
+			<mat-icon svgIcon="pause"></mat-icon>
+		</div>
+		<div class="next-button" [ngClass]="{'dark_mode': styleMode}" (click) = "nextSong()">
+			<mat-icon svgIcon="next"></mat-icon>
+		</div>
+	</div>
+	
 	<div class="controls-right">
 		<div class="volume-button" [ngClass]="{'dark_mode': styleMode}">
-				<mat-icon svgIcon="volume"></mat-icon>
-				<mat-slider class="volume-slider" [ngClass]="{'dark_mode': styleMode}"></mat-slider>
+			<mat-icon svgIcon="volume"></mat-icon>
+			<mat-slider min = "0"  max = "1" step="0.01" [value] = "currentVolume" class="volume-slider" [ngClass]="{'dark_mode': styleMode}" (input) = "changeVolume($event)"></mat-slider>
 		</div>
 	</div>
 </div>

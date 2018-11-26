@@ -20,6 +20,6 @@ export class AuthorService {
     }
 
     getAuthorsByName(name: string): Observable<Author> {
-        return this.http.get<Author>('http://localhost:5000/api/music/author')
+        return this.http.get<Author>('http://localhost:5000/api/music/author', {params: {name}})
     }
 }

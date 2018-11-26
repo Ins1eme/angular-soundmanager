@@ -6,6 +6,7 @@ import { MatSliderModule } from '@angular/material/slider';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatButtonModule } from '@angular/material/button';
+import { ScrollDispatchModule } from '@angular/cdk/scrolling';
 
 @NgModule({
     imports: [
@@ -15,7 +16,8 @@ import { MatButtonModule } from '@angular/material/button';
         MatSliderModule,
         MatToolbarModule,
         MatChipsModule,
-        MatButtonModule
+        MatButtonModule,
+        ScrollDispatchModule
     ],
     exports: [
         MatIconModule,
@@ -24,7 +26,8 @@ import { MatButtonModule } from '@angular/material/button';
         MatSliderModule,
         MatToolbarModule,
         MatChipsModule,
-        MatButtonModule
+        MatButtonModule,
+        ScrollDispatchModule
     ]
 })
 

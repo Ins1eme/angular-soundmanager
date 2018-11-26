@@ -7,14 +7,15 @@ import { FavouritesPageComponent } from './favourites-page/favourites-page.compo
 import { SearchPageComponent } from './search-page/search-page.component';
 import { SettingsPageComponent } from './settings-page/settings-page.component';
 import { MaterialModule } from "../material.module";
-import { AuthorsDetailsComponent } from './authors-details/authors-details.component';
+import { AuthorDetailsComponent } from './author-details/author-details.component';
 
 @NgModule({
     declarations: [
         HomePageComponent, 
         FavouritesPageComponent, 
         SearchPageComponent, 
-        SettingsPageComponent, AuthorsDetailsComponent,
+        SettingsPageComponent, 
+        AuthorDetailsComponent,
     ],
     imports: [
         MaterialModule,

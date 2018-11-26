@@ -18,13 +18,30 @@ module.exports.getAuthors = async function (req, res) {
     res.status(200).json(authors)
 }
 
-module.exports.getAuthor = async function(req, res) {
-    const author = await Author.findOne({name: req.params.name}).populate({
+module.exports.getPlaylistByAuthorName = async function(req, res) {
+    let playlist = []
+    const author = await Author.findOne({ authorName: req.query.name }).populate({
         path: 'albums',
         populate: {
             path: 'playlists'
         }
     })
+    author.albums.map((album) => {
+        playlist = playlist.concat(album.playlists)
+    })
+
+    
+    res.status(200).json(playlist)
+}
+
+module.exports.getAuthor = async function(req, res) {
+    const author = await Author.findOne({authorName: req.query.name}).populate({
+        path: 'albums',
+        populate: {
+            path: 'playlists'
+        }
+    })
+    
     res.status(200).json(author)
 }
 module.exports.addAlbom = async function (req, res) {
