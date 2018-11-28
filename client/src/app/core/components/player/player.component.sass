@@ -42,6 +42,8 @@
         left: 0
         height: 10px
         cursor: pointer
+    .mat-slider-track-fill
+        background: $pinkColor
 
     .mat-slider-track-wrapper,
     .mat-slider-track-background,
@@ -53,12 +55,22 @@
 
     .mat-slider-thumb-container
         display: none
-    
+
+.mat-slider
+    &.dark_mode ::ng-deep
+        .mat-slider-track-fill
+            background: $greenColor
+            
 .current-song-wrapper 
     width: 40%
 
 .controls-left
     width: 40%
+
+    .current-song-author
+
+        &.dark_mode
+            color: $whiteColor
 
 mat-icon
     width: 20px

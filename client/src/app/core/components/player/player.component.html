@@ -1,7 +1,7 @@
 <div class="player" [ngClass]="{'dark_mode': styleMode}">
 	<div class="current-song-wrapper">
 		<div  class="controls-left" *ngIf="currentSong">
-			<span class="current-song-author">
+			<span class="current-song-author" [ngClass]="{'dark_mode': styleMode}">
 				{{currentSong.songAuthor}} - {{currentSong.songName}}
 			</span>
 			<mat-slider 
@@ -11,6 +11,7 @@
 				step="0.01" 
 				[value] = "currentTime"
 				(input) = "onTimeChange($event)"
+				[ngClass]="{'dark_mode': styleMode}"
 			>
 	
 			</mat-slider>

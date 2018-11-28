@@ -1,9 +1,9 @@
-<main *ngIf="author">
+<main *ngIf="author" [ngClass]="{'dark_mode': styleMode}">
 	<div class="author-banner">
 		<div class="author-banner-content">
 			<h1 class="author-name">{{author.authorName}}</h1>
 			<p class="author-description">Great music inspired by early electronic sounds, combining the symphony of classical instruments and complete surrounding</p>
-			<a class="play-song" mat-button>
+			<a class="play-song" mat-button [ngClass]="{'dark_mode': styleMode}">
 				<mat-icon svgIcon= "play-circular"></mat-icon>
 				<span class="play-song-text">Play songs</span>
 			</a>
@@ -13,12 +13,12 @@
 	
 	<div class="author-content">
 		<div class="author-albums">
-			<div class="author-albums-title">
+			<div class="author-albums-title" [ngClass]="{'dark_mode': styleMode}">
 				<mat-icon svgIcon="cd"></mat-icon>
 				<h3>{{author.authorName}} Albums</h3>
 			</div>
 
-			<div class="album" *ngFor = "let album of author.albums">
+			<div class="album" *ngFor = "let album of author.albums" [ngClass]="{'dark_mode': styleMode}" >
 				<div class="album-top">
 					<img [src]="album.backgroundImage">
 
@@ -35,9 +35,9 @@
 						<mat-icon svgIcon="play"></mat-icon>
 					</div>
 				</div>
-				<div class="song-list" *ngFor = "let song of album.playlists">
-					<div class="song-item" (click) = "setCurrentSong(song)">
-						<div class="play-song">
+				<div class="song-list" *ngFor = "let song of album.playlists" >
+					<div class="song-item" (click) = "setCurrentSong(song)" [ngClass]="{'dark_mode': styleMode}" >
+						<div class="play-song" [ngClass]="{'active': song.songName === currentSong?.songName}">
 							<mat-icon svgIcon= "play-circular"></mat-icon>
 						</div>
 						<span class="current-song">{{song.songAuthor}} - {{song.songName}}</span>

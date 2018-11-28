@@ -29,7 +29,6 @@ export class PlayerComponent implements OnInit, OnDestroy {
     private playlistService: PlaylistService,
     private playerService: PlayerService,
   ) {}
-    
 
   ngOnInit() {
     this.playerService.audio.volume = this.currentVolume
@@ -101,6 +100,7 @@ export class PlayerComponent implements OnInit, OnDestroy {
         this.playSong()
       }
     }
+    this.playlistService.setCurrentSong(this.currentSong)
   }
 
   previousSong() {
@@ -115,6 +115,7 @@ export class PlayerComponent implements OnInit, OnDestroy {
         this.playSong()
       }
     }
+    this.playlistService.setCurrentSong(this.currentSong)
   }
 
   changeVolume(event) {
