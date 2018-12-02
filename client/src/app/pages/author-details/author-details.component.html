@@ -35,14 +35,12 @@
 						<mat-icon svgIcon="play"></mat-icon>
 					</div>
 				</div>
-				<div class="song-list" *ngFor = "let song of album.playlists" >
-					<div class="song-item" (click) = "setCurrentSong(song)" [ngClass]="{'dark_mode': styleMode}" >
-						<div class="play-song" [ngClass]="{'active': song.songName === currentSong?.songName}">
-							<mat-icon svgIcon= "play-circular"></mat-icon>
-						</div>
-						<span class="current-song">{{song.songAuthor}} - {{song.songName}}</span>
-						<mat-icon svgIcon="show-more" class="show-more-button"></mat-icon>
-					</div>
+				<div class="song-list">
+					<app-audio 
+						*ngFor = "let song of album.playlists" 
+						[userPlaylist] = 'userPlaylist' 
+						[song] = 'song'>
+					</app-audio>
 				</div>
 			</div>
 		</div>

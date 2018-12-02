@@ -14,7 +14,8 @@ const itemSchema = new Schema({
     },
     favourites: [{
         type: Schema.Types.ObjectId,
-        ref: 'Song'
+        ref: 'Song',
+        unique: true
     }]
 })
 

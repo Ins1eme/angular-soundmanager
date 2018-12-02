@@ -14,7 +14,7 @@ export class iconService {
     ) {}
 
     initIcons() {
-        const icons: string[] = ['logo', 'profile', 'cd', 'favourites', 'search', 'settings', 'play', 'pause', 'next', 'volume', 'play-circular', 'share', 'refresh-dot', 'heart', 'show-more']
+        const icons: string[] = ['logo', 'profile', 'cd', 'favourites', 'search', 'settings', 'play', 'pause', 'next', 'volume', 'play-circular', 'share', 'refresh-dot', 'heart', 'download', 'like']
         for(let icon of icons) {
             this.matIconRegistry.addSvgIcon(
                 icon, 

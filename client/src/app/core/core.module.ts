@@ -5,12 +5,16 @@ import { MaterialModule } from "../material.module";
 import { SideNavComponent } from './components/side-nav/side-nav.component';
 import { PlayerComponent } from './components/player/player.component';
 import { RouterModule } from "@angular/router";
+import { SiteLayoutComponent } from "./layouts/site-layout/site-layout.component";
+import { AuthLayoutComponent } from "./layouts/auth-layout/auth-layout.component";
 
 @NgModule({
     declarations: [
         HeaderComponent,
         SideNavComponent,
         PlayerComponent,
+        SiteLayoutComponent,
+        AuthLayoutComponent
     ],
     imports: [
         MaterialModule,
@@ -21,7 +25,9 @@ import { RouterModule } from "@angular/router";
         MaterialModule,
         HeaderComponent,
         SideNavComponent,
-        PlayerComponent
+        PlayerComponent,
+        SiteLayoutComponent,
+        AuthLayoutComponent
     ]
 })
 

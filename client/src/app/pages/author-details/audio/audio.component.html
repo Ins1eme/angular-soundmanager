@@ -1,0 +1,10 @@
+<div class="song-item" (click)="setCurrentSong()" [ngClass]="{'dark_mode': styleMode}">
+  <div class="play-song">
+    <mat-icon svgIcon="play-circular"></mat-icon>
+  </div>
+  <span class="current-song">{{song.songAuthor}} - {{song.songName}}</span>
+  <div class="song-options" [ngClass]="{'dark_mode': styleMode}">
+    <mat-icon svgIcon="like" class="like" [ngClass]="{'active': isActive}" (click)="addToPlaylist($event)"></mat-icon>
+    <mat-icon svgIcon="download" class="download" (click)="download($event)"></mat-icon>
+  </div>
+</div>

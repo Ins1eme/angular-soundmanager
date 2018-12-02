@@ -6,8 +6,12 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { FavouritesPageComponent } from './favourites-page/favourites-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { SettingsPageComponent } from './settings-page/settings-page.component';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MaterialModule } from "../material.module";
 import { AuthorDetailsComponent } from './author-details/author-details.component';
+import { LoginPageComponent } from "./login-page/login-page.component";
+import { RegisterPageComponent } from "./register-page/register-page.component";
+import { AudioComponent } from "./author-details/audio/audio.component";
 
 @NgModule({
     declarations: [
@@ -16,11 +20,16 @@ import { AuthorDetailsComponent } from './author-details/author-details.componen
         SearchPageComponent, 
         SettingsPageComponent, 
         AuthorDetailsComponent,
+        LoginPageComponent,
+        RegisterPageComponent,
+        AudioComponent
     ],
     imports: [
-        MaterialModule,
         CommonModule,
-        RouterModule
+        RouterModule,
+        FormsModule,
+        ReactiveFormsModule,
+        MaterialModule,
     ]
 })
 

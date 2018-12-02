@@ -1,0 +1,75 @@
+@import "../../../../styles-variables"
+
+.song-item
+    padding: 18px 10px
+    display: flex
+    align-items: center
+    justify-content: space-between
+    border-bottom: 1px solid rgba(0,0,0,.1)
+
+    .play-song
+        &.active
+            mat-icon
+                fill: $pinkColor
+    &.dark_mode
+        .play-song
+            &.active
+                mat-icon
+                    fill: $greenColor
+    &.dark_mode
+        &:hover
+            .play-song
+                mat-icon
+                    fill: $greenColor
+    &:hover
+        .play-song
+            mat-icon
+                fill: $pinkColor
+
+    .play-song
+        margin-right: 20px
+        display: flex
+        align-items: center
+
+        mat-icon
+            fill: $mainGrayColor
+            transition: $transition
+    
+    .current-song
+        margin-right: auto
+        font-size: 15px
+        
+.song-options ::ng-deep
+    mat-icon
+        cursor: pointer
+    .like 
+        margin-right: 10px
+        
+
+        .heart-fill
+            transition: $transition
+            fill: $whiteColor
+        .heart-border
+            transition: $transition
+            fill: $mainGrayColor
+
+        &.active
+            .heart-fill
+                fill: $pinkColor
+            .heart-border
+                fill: $pinkColor
+    .download
+        transition: $transition
+        fill: $mainGrayColor
+
+.song-options
+    &.dark_mode ::ng-deep
+        .like
+            fill: $whiteColor
+        &.active
+            .heart-fill
+                fill: $greenColor
+            .heart-border
+                fill: $greenColor
+        .download
+            fill: $whiteColor

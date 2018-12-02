@@ -42,7 +42,11 @@ export class PlayerComponent implements OnInit, OnDestroy {
     this.playlistService.getCurrentPlaylist().pipe(
       takeUntil(this.destroy$),
       switchMap(name => {
-        return this.playlistService.getCurrentPlaylistByAuthorName(name)
+        if(name === "userPlaylist") {
+          return this.playlistService.getUserPlaylist()
+        } else {
+          return this.playlistService.getCurrentPlaylistByAuthorName(name)
+        }
       })
     ).subscribe(data => {
       this.currentPlaylist = data
@@ -129,6 +133,7 @@ export class PlayerComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    this.playerService.audio.pause()
     this.destroy$.next(true)
   }
 }

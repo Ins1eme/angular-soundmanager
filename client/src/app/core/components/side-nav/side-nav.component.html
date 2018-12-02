@@ -1,22 +1,22 @@
 <div class="sidenav" [ngClass]="{'dark_mode': styleMode}" >
   <ul class="sidenav-list" [ngClass]="{'dark_mode': styleMode}">
 		
-    <li [routerLink]="['authors']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">
+    <li [routerLink]="['/authors']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: false}">
 		<a class="sidenav-link">
         	<mat-icon svgIcon="cd"></mat-icon>
 		</a>
 	</li>
-    <li [routerLink]="['favourites']" routerLinkActive="active">
+    <li [routerLink]="['/favourites']" routerLinkActive="active">
 		<a class="sidenav-link">
-        	<mat-icon svgIcon="favourites"></mat-icon>
+        	<mat-icon svgIcon="like"></mat-icon>
 		</a>
 	</li>
-    <li [routerLink]="['search']" routerLinkActive="active">
+    <li [routerLink]="['/search']" routerLinkActive="active">
 		<a class="sidenav-link">
         	<mat-icon svgIcon="search"></mat-icon>
 		</a>
 	</li>
-    <li [routerLink]="['settings']" routerLinkActive="active">
+    <li [routerLink]="['/settings']" routerLinkActive="active">
 		<a class="sidenav-link">
         	<mat-icon svgIcon="settings"></mat-icon>
 		</a>

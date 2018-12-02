@@ -2,6 +2,7 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { StyleModeService } from '../../services/style-mode.service';
 import { Subject } from 'rxjs';
 import { takeUntil } from 'rxjs/operators';
+import { AuthService } from '../../services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -15,7 +16,8 @@ export class HeaderComponent implements OnInit, OnDestroy{
   styleMode: boolean
 
   constructor(
-    private styleModeService: StyleModeService
+    private styleModeService: StyleModeService,
+    private authService: AuthService
   ) { }
 
   ngOnInit() {
@@ -31,6 +33,10 @@ export class HeaderComponent implements OnInit, OnDestroy{
 
   ngOnDestroy(): void {
     this.destroy$.next(true)
+  }
+
+  logOut() {
+    this.authService.logOut()
   }
 
 }

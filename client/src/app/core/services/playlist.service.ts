@@ -36,5 +36,17 @@ export class PlaylistService {
     getCurrentPlaylistByAuthorName(name: string): Observable<Song[]> {
         return this.http.get<Song[]>('http://localhost:5000/api/music/playlist', {params: {name}})
     }
+
+    getUserPlaylist(): Observable<Song[]> {
+        return this.http.get<Song[]>('http://localhost:5000/api/user/playlist')
+    }
+
+    addSongToUserPlaylist(songId: string): Observable<Song[]> {
+        return this.http.put<Song[]>('http://localhost:5000/api/user/playlist', {_id: songId})
+    }
+
+    deleteSongFromUserPlaylist(songId: string): Observable<Song[]> {
+        return this.http.delete<Song[]>(`http://localhost:5000/api/user/playlist/${songId}`)
+    }
     
 }

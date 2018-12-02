@@ -1,0 +1,49 @@
+<div class="login">
+  <span class="main-title">
+    Register
+  </span>
+  <form 
+    class="login-form"
+    [formGroup] = "registerForm" 
+		(ngSubmit) = "onSubmit()"
+  >
+    <mat-form-field class="email">
+      <input 
+        matInput 
+        placeholder="Email" 
+        formControlName="email"
+      >
+    </mat-form-field>
+    <mat-form-field class="password">
+      <input 
+        matInput 
+        placeholder="Password" 
+        type="password" 
+        formControlName="password"
+      >
+    </mat-form-field>
+    <mat-form-field class="password">
+      <input 
+        matInput 
+        placeholder="Confirm Password" 
+        type="password" 
+        formControlName="confirmedPassword"
+      >
+    </mat-form-field>
+    <a 
+      class="auth-link"
+      [routerLink]="[ '/login' ]" 
+    >
+      Already have an account? Sign In
+    </a>
+
+    <button 
+      [disabled] = "registerForm.invalid" 
+      type="submit" 
+      class="submit" 
+      mat-button
+    >
+      Submit
+    </button>
+  </form>
+</div>

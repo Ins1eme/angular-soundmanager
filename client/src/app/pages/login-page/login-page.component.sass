@@ -1,0 +1,52 @@
+@import "../../../styles-variables"
+    
+.login 
+
+.main-title
+    display: block
+    font-size: 24px
+    text-align: center
+    margin-bottom: 20px
+
+.login-form
+    display: flex
+    flex-direction: column
+    margin: auto
+    width: 90%
+.email
+    margin-bottom: 10px
+    input
+        color: $fontColor
+        
+.password
+    margin-bottom: 20px
+.submit
+    color: $whiteColor
+    margin: auto
+    background-color: $pinkColor
+    margin-bottom: 20px
+
+mat-form-field ::ng-deep
+    .mat-form-field-label
+        color: $fontColor
+
+mat-form-field
+    &.mat-focused ::ng-deep
+        .mat-form-field-label
+            color: $pinkColor
+        .mat-form-field-ripple
+            background-color: $pinkColor!important   
+
+.auth-link
+    position: absolute
+    white-space: nowrap
+    bottom: -60px   
+    left: 50%
+    transform: translateX(-50%)
+    margin-bottom: 20px
+    border-bottom: 1px solid $fontColor
+
+.submit
+    &:disabled
+        opacity: .8
+        color: $whiteColor

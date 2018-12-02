@@ -1,3 +1,11 @@
-<p>
-  favourites-page works!
-</p>
+<main *ngIf= "userPlaylist as songs">
+  <span class="title">Favorite Songs</span>
+  <div class="song-container">
+    <app-audio  
+      (onPlaylistChange) = "changePlaylist($event)" 
+      [userPlaylist] = 'userPlaylist' 
+      [song] = 'song'  
+      *ngFor="let song of songs">
+    </app-audio>
+  </div>
+</main>

@@ -20,6 +20,7 @@ export class AuthorDetailsComponent implements OnInit, OnDestroy {
   styleMode: boolean
   destroy$: Subject<boolean> = new Subject()
   currentSong: Song
+  userPlaylist: Song[]
 
   constructor(
     private acRouter: ActivatedRoute,
@@ -33,7 +34,6 @@ export class AuthorDetailsComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe(mode => this.styleMode = mode)
 
-
     this.acRouter.params.pipe(
       takeUntil(this.destroy$),
       map((params: Params) => params.id),
@@ -45,21 +45,13 @@ export class AuthorDetailsComponent implements OnInit, OnDestroy {
       this.author = author
     })
 
-    this.playlistService.getCurrentSong()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe(song => {
-        this.currentSong = song
-        console.log(this.currentSong)
-      })
+    this.playlistService.getUserPlaylist().subscribe(userPlaylist => {
+      this.userPlaylist = userPlaylist
+    })
 
-  }
-
-  setCurrentSong(song: Song) {
-    this.playlistService.setCurrentSong(song)
   }
 
   ngOnDestroy() {
     this.destroy$.next(true)
   }
-
 }

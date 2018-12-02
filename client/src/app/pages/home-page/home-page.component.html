@@ -1,6 +1,6 @@
-<main [ngClass]="{'dark_mode': styleMode}">
-	<div class="author-container">
-		<div class="author" [ngClass]="{'dark_mode': styleMode}" *ngFor="let author of authors$ | async">
+<main [ngClass]="{'dark_mode': styleMode}" *ngIf="authors$ | async as authors">
+	<div class="author-container" >
+		<div class="author" [ngClass]="{'dark_mode': styleMode}" *ngFor="let author of authors">
 			<div class="author-img">
 				<img [src]="author.authorImage">
 			</div>

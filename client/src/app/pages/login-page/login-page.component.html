@@ -1,0 +1,20 @@
+<div class="login">
+  <span class="main-title">
+    Login
+  </span>
+  <form 
+    class="login-form" 
+    [formGroup] = "loginForm" 
+		(ngSubmit) = "onSubmit()">
+    <mat-form-field class="email">
+      <input matInput placeholder="Email" formControlName="email">
+    </mat-form-field>
+    <mat-form-field class="password">
+      <input matInput placeholder="Password" type="password" formControlName="password">
+    </mat-form-field>
+    <a [routerLink]="[ '/register' ]" class="auth-link">Dont have an account? Create one here...</a>
+
+    <button type="submit" [disabled] = "loginForm.invalid" class="submit" mat-button>Submit</button>
+    <span *ngIf="message">{{message}}</span>
+  </form>
+</div>
