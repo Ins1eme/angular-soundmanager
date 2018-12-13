@@ -6,6 +6,7 @@ import { PlaylistService } from '../../services/playlist.service';
 import { Song } from '../../interfaces/Song';
 import { PlayerService } from '../../services/player.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-player',
@@ -28,6 +29,7 @@ export class PlayerComponent implements OnInit, OnDestroy {
     private styleModeService: StyleModeService,
     private playlistService: PlaylistService,
     private playerService: PlayerService,
+    private searchService: SearchService,
   ) {}
 
   ngOnInit() {
@@ -44,6 +46,8 @@ export class PlayerComponent implements OnInit, OnDestroy {
       switchMap(name => {
         if(name === "userPlaylist") {
           return this.playlistService.getUserPlaylist()
+        } else if (name === "searchPlaylist") {
+          return this.searchService.getSearchPlaylist()
         } else {
           return this.playlistService.getCurrentPlaylistByAuthorName(name)
         }

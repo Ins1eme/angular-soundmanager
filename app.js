@@ -5,6 +5,7 @@ const passport = require('passport');
 
 const songRoutes = require('./routes/songs')
 const authRoutes = require('./routes/auth')
+const searchRoutes = require('./routes/search')
 const app = express()
 
 app.use(function(req, res, next) {
@@ -31,5 +32,7 @@ mongoose.set('useCreateIndex', true);
 app.use('/api', songRoutes)
 
 app.use('/api', authRoutes)
+
+app.use('/api', searchRoutes)
     
 module.exports = app

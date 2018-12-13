@@ -21,11 +21,10 @@ module.exports.register = async function(req, res) {
 }
 
 module.exports.login = async function(req, res) {
-    console.log(req.body)
     const candidate = await User.findOne({ email: req.body.email })
     if(candidate) {
         const passwordResult = bcrypt.compareSync(req.body.password, candidate.password)
-        console.log(req.body.password, candidate.password)
+        
         if(passwordResult) {
             const token = jwt.sign({
                 email: candidate.email,

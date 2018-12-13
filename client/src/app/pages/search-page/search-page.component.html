@@ -1,3 +1,16 @@
-<p>
-  search-page works!
-</p>
+<main>
+  <form 
+    class="search-form"
+    [formGroup] = "searchForm"
+    (ngSubmit) = "onSubmit()"
+  >
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Song" formControlName="search">
+    </mat-form-field>
+    <button mat-button>Search</button>
+  </form>
+
+  <div class="audio-container">
+    <app-audio *ngFor="let song of songs" [song]= 'song' [userPlaylist] = "userPlaylist"></app-audio>
+  </div>
+</main>

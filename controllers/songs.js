@@ -1,6 +1,5 @@
 const Song = require('../models/Song');
 const Album = require('../models/Album');
-const mongoose = require('mongoose');
 const Author = require('../models/Author');
 const User = require('../models/User');
 

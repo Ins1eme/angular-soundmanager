@@ -13,7 +13,6 @@ import { takeUntil } from 'rxjs/operators';
 export class FavouritesPageComponent implements OnInit, OnDestroy {
 
   userPlaylist: Song[]
-  currentSong: Song
   destroy$: Subject<boolean> = new Subject()
 
   constructor(

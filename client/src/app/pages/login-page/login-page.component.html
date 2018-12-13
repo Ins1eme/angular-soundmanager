@@ -8,9 +8,15 @@
 		(ngSubmit) = "onSubmit()">
     <mat-form-field class="email">
       <input matInput placeholder="Email" formControlName="email">
+      <mat-error *ngIf="loginForm.get('email').hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
     </mat-form-field>
     <mat-form-field class="password">
       <input matInput placeholder="Password" type="password" formControlName="password">
+      <mat-error *ngIf="loginForm.get('password').hasError('minlength')">
+        Minimal length for password 6
+      </mat-error>
     </mat-form-field>
     <a [routerLink]="[ '/register' ]" class="auth-link">Dont have an account? Create one here...</a>
 
