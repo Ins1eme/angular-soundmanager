@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { AuthorService } from 'src/app/core/services/author.service';
-import { map, switchMap, tap, takeUntil, publishReplay, share } from 'rxjs/operators';
+import { map, switchMap, tap, takeUntil} from 'rxjs/operators';
 import { Author } from 'src/app/core/interfaces/Author';
 import { Song } from 'src/app/core/interfaces/Song';
 import { PlaylistService } from 'src/app/core/services/playlist.service';

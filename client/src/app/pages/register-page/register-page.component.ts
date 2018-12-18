@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 import { Subject } from 'rxjs';
 import { AuthService } from 'src/app/core/services/auth.service';
+import { takeUntil } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register-page',
@@ -15,7 +17,8 @@ export class RegisterPageComponent implements OnInit {
   destroy$: Subject<boolean> = new Subject()
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ) { }
 
   ngOnInit() {
@@ -31,8 +34,11 @@ export class RegisterPageComponent implements OnInit {
       email: this.registerForm.value.email,
       password: this.registerForm.value.password
     }
-    this.authService.registration(user).subscribe(data => {
+    this.authService.registration(user).pipe(
+      takeUntil(this.destroy$)
+    ).subscribe(data => {
       console.log(data)
+      this.router.navigate(['/login'])
     })
   }
 

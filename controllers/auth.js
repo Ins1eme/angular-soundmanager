@@ -1,4 +1,5 @@
 const User = require('../models/User');
+const Song = require('../models/Song');
 const jwt = require('jsonwebtoken');
 const bcrypt = require('bcryptjs');
 
@@ -13,7 +14,8 @@ module.exports.register = async function(req, res) {
         const password = req.body.password;
         const user = new User({
             email: req.body.email,
-            password: bcrypt.hashSync(password, salt)
+            password: bcrypt.hashSync(password, salt),
+            favourites: new Song()
         })
         await user.save()
         res.status(201).json(user)

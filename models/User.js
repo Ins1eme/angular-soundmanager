@@ -1,6 +1,5 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-const Song = require('./Song');
 
 const itemSchema = new Schema({
     email: {
@@ -14,8 +13,7 @@ const itemSchema = new Schema({
     },
     favourites: [{
         type: Schema.Types.ObjectId,
-        ref: 'Song',
-        unique: true
+        ref: 'Song'
     }]
 })
 
