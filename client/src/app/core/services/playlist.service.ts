@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Song } from '../interfaces/Song';
-import { Subject, Observable, BehaviorSubject } from 'rxjs';
+import { Subject, Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -42,6 +42,7 @@ export class PlaylistService {
     }
 
     addSongToUserPlaylist(songId: string): Observable<Song[]> {
+        console.log(songId)
         return this.http.put<Song[]>('http://localhost:5000/api/user/playlist', {_id: songId})
     }
 

@@ -16,7 +16,6 @@ import { Subject } from 'rxjs';
 export class AuthorDetailsComponent implements OnInit, OnDestroy {
 
   author: Author
-  id: string
   styleMode: boolean
   destroy$: Subject<boolean> = new Subject()
   currentSong: Song

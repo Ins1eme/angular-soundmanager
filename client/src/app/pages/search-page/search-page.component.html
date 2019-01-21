@@ -1,16 +1,22 @@
-<main>
+<main [ngClass]="{'dark_mode': styleMode}">
   <form 
     class="search-form"
     [formGroup] = "searchForm"
     (ngSubmit) = "onSubmit()"
   >
-    <mat-form-field class="example-full-width">
+    <mat-form-field class="form_search" [ngClass]="{'dark_mode': styleMode}">
       <input matInput placeholder="Song" formControlName="search">
     </mat-form-field>
     <button mat-button>Search</button>
   </form>
 
-  <div class="audio-container">
-    <app-audio *ngFor="let song of songs" [song]= 'song' [userPlaylist] = "userPlaylist"></app-audio>
+  <div class="audio-container" [ngClass]="{'dark_mode': styleMode}">
+    <app-audio 
+      *ngFor="let song of songs" 
+      [song]= "song"
+      [userPlaylist] = "userPlaylist"
+      [styleMode] = "styleMode"
+    >
+    </app-audio>
   </div>
 </main>

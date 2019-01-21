@@ -5,7 +5,6 @@ import { AuthGuard } from './core/classes/auth.guard';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { FavouritesPageComponent } from './pages/favourites-page/favourites-page.component';
 import { SearchPageComponent } from './pages/search-page/search-page.component';
-import { SettingsPageComponent } from './pages/settings-page/settings-page.component';
 import { AuthorDetailsComponent } from './pages/author-details/author-details.component';
 import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { RegisterPageComponent } from './pages/register-page/register-page.component';
@@ -19,8 +18,7 @@ const routes: Routes = [
             { path: 'authors', component:  HomePageComponent, },
             { path: 'authors/:id', component: AuthorDetailsComponent},
             { path: 'favourites', component: FavouritesPageComponent},
-            { path: 'search', component: SearchPageComponent},
-            { path: 'settings', component: SettingsPageComponent}
+            { path: 'search', component: SearchPageComponent}
         ]
     },
     {

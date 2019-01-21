@@ -2,7 +2,7 @@ import { Component, OnInit, Input, OnDestroy, EventEmitter, Output } from '@angu
 import { Song } from 'src/app/core/interfaces/Song';
 import { PlaylistService } from 'src/app/core/services/playlist.service';
 import { Subject } from 'rxjs';
-import { takeUntil, take } from 'rxjs/operators';
+import { takeUntil } from 'rxjs/operators';
 import { StyleModeService } from 'src/app/core/services/style-mode.service';
 
 @Component({
@@ -13,10 +13,10 @@ import { StyleModeService } from 'src/app/core/services/style-mode.service';
 export class AudioComponent implements OnInit, OnDestroy {
 
   @Input() song: Song
+  @Input() styleMode: boolean
   @Input() userPlaylist: Song[]
   @Output() onPlaylistChange: EventEmitter<Song[]> = new EventEmitter()
-
-  styleMode: boolean
+  
   destroy$: Subject<boolean> = new Subject()
   isActive: boolean
   

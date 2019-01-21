@@ -13,7 +13,5 @@ module.exports.getSearchSong = async function (req, res) {
     .exec(function(err, songs) {
         res.status(200).json(songs)
     })
-    
-
 
 }   

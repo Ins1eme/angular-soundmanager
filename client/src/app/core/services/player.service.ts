@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Song } from '../interfaces/Song';
 
 @Injectable({
   providedIn: 'root'

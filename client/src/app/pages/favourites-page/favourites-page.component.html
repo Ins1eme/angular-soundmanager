@@ -1,11 +1,18 @@
-<main *ngIf= "userPlaylist as songs">
+<main *ngIf= "userPlaylist as songs" [ngClass]="{'dark_mode': styleMode}">
   <span class="title">Favorite Songs</span>
-  <div class="song-container">
-    <app-audio  
-      (onPlaylistChange) = "changePlaylist($event)" 
-      [userPlaylist] = 'userPlaylist' 
-      [song] = 'song'  
-      *ngFor="let song of songs">
-    </app-audio>
-  </div>
+  <ng-container *ngIf="songs.length; else emptyPlaylist">
+    <div class="song-container" [ngClass]="{'dark_mode': styleMode}">
+      <app-audio  
+        *ngFor="let song of songs"
+        (onPlaylistChange) = "changePlaylist($event)" 
+        [userPlaylist] = 'userPlaylist' 
+        [song] = 'song'
+        [styleMode] = 'styleMode'
+      >
+      </app-audio>
+    </div>
+  </ng-container>
+  <ng-template #emptyPlaylist>
+    <p>You don`t have any songs</p>
+  </ng-template>
 </main>

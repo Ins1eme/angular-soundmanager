@@ -5,7 +5,6 @@ import { RouterModule } from "@angular/router";
 import { HomePageComponent } from './home-page/home-page.component';
 import { FavouritesPageComponent } from './favourites-page/favourites-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
-import { SettingsPageComponent } from './settings-page/settings-page.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { MaterialModule } from "../material.module";
 import { AuthorDetailsComponent } from './author-details/author-details.component';
@@ -17,8 +16,7 @@ import { AudioComponent } from "./author-details/audio/audio.component";
     declarations: [
         HomePageComponent, 
         FavouritesPageComponent, 
-        SearchPageComponent, 
-        SettingsPageComponent, 
+        SearchPageComponent,
         AuthorDetailsComponent,
         LoginPageComponent,
         RegisterPageComponent,

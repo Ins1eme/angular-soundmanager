@@ -1,11 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { StyleModeService } from '../../services/style-mode.service';
-import { Subject, zip, Observable, from } from 'rxjs';
+import { Subject, from } from 'rxjs';
 import { takeUntil, switchMap, tap } from 'rxjs/operators';
 import { PlaylistService } from '../../services/playlist.service';
 import { Song } from '../../interfaces/Song';
 import { PlayerService } from '../../services/player.service';
-import { ActivatedRoute, Router } from '@angular/router';
 import { SearchService } from '../../services/search.service';
 
 @Component({
@@ -78,17 +77,17 @@ export class PlayerComponent implements OnInit, OnDestroy {
   }
 
   playSong() {
+    if(!this.currentSong) return
     this.playerState = true
     this.isLoadSong = false
-
     from(this.playerService.play(this.currentSong.url)).subscribe(_ => {
       this.isLoadSong = true
     })
   }
 
   pauseSong() {
+    this.playerState = false
     if(this.isLoadSong) {
-      this.playerState = false
       this.playerService.pause()
     }
 

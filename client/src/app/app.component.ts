@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { iconService } from './core/services/icon.service';
 
 @Component({
@@ -6,16 +6,12 @@ import { iconService } from './core/services/icon.service';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.sass']
 })
-export class AppComponent implements OnInit{
+export class AppComponent {
 
     constructor(
       private iconService: iconService
     ) {
       this.iconService.initIcons()
-    }
-
-    ngOnInit() {
-      
     }
 
 }

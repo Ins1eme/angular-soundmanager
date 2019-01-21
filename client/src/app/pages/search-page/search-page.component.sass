@@ -1,2 +1,28 @@
+@import "../../../styles-variables"
+
 main
     padding: 32px 32px 88px 32px
+    transition: $transition
+    min-height: calc(100vh - 64px)
+
+    &.dark_mode 
+        background-color: $lightDarkColor
+        color: $whiteColor
+        
+.audio-container
+    &.dark_mode
+        background: $darkGrayColor
+
+.form_search
+    &.dark_mode ::ng-deep
+        .mat-form-field-label
+            color: $whiteColor
+.form_search
+    &.dark_mode ::ng-deep
+        .mat-form-field-underline
+            background-color: $whiteColor
+.form_search.mat-focused
+    &.dark_mode ::ng-deep
+        .mat-form-field-underline,
+        .mat-form-field-ripple
+            background-color: $whiteColor

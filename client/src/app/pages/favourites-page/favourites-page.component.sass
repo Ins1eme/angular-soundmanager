@@ -4,10 +4,19 @@ main
     padding: 32px 32px 88px 32px
     background: $grayColor
     min-height: calc(100vh - 88px)
+    transition: $transition
+
+    &.dark_mode
+        background-color: $lightDarkColor
+        color: $whiteColor
 .song-container
     box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.1)
     background: $whiteColor
     margin-bottom: 32px
+    transition: $transition
+
+    &.dark_mode 
+        background: $darkGrayColor
 
 .title 
     display: block

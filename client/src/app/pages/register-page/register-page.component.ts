@@ -4,6 +4,7 @@ import { Subject } from 'rxjs';
 import { AuthService } from 'src/app/core/services/auth.service';
 import { takeUntil } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { UserService } from 'src/app/core/services/user.service';
 
 @Component({
   selector: 'app-register-page',
@@ -18,7 +19,8 @@ export class RegisterPageComponent implements OnInit {
 
   constructor(
     private authService: AuthService,
-    private router: Router
+    private router: Router,
+    private userService: UserService
   ) { }
 
   ngOnInit() {
@@ -36,8 +38,8 @@ export class RegisterPageComponent implements OnInit {
     }
     this.authService.registration(user).pipe(
       takeUntil(this.destroy$)
-    ).subscribe(data => {
-      console.log(data)
+      ).subscribe((user) => {
+      this.userService.setUserEmail(user.email)
       this.router.navigate(['/login'])
     })
   }
