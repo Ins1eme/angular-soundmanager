@@ -1,4 +1,2 @@
 # Angular soundmanager
-
-# DEMO:
-(sound-manager.herokuapp.com)
+# [Example]: https://sound-manager.herokuapp.com
